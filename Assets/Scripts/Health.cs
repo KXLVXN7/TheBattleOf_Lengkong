@@ -19,11 +19,19 @@ public class Health : MonoBehaviour
         currentHP = maxHP;
     }
 
+    private IEnumerator VisualIndicator(Color color)
+    {
+        GetComponent<SpriteRenderer>().color = color;
+        yield return new WaitForSeconds(0.35f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
     public void takeDamage()
     {
         currentHP -= 5;
         Debug.Log(HPBar);
         HPBar.fillAmount= currentHP/maxHP;
+        StartCoroutine(VisualIndicator(Color.red));
         Death();
     }
     public void Death()
