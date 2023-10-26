@@ -25,7 +25,6 @@ public class Health : MonoBehaviour
         yield return new WaitForSeconds(0.35f);
         GetComponent<SpriteRenderer>().color = Color.white;
     }
-
     public void takeDamage()
     {
         currentHP -= 5;
@@ -34,6 +33,7 @@ public class Health : MonoBehaviour
         StartCoroutine(VisualIndicator(Color.red));
         Death();
     }
+
     public void Death()
     {
         if(HPBar.fillAmount == 0)
