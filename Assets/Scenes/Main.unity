@@ -1289,7 +1289,6 @@ GameObject:
   - component: {fileID: 794681039}
   - component: {fileID: 794681040}
   - component: {fileID: 794681041}
-  - component: {fileID: 794681042}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1478,20 +1477,6 @@ MonoBehaviour:
   player: {fileID: 253779784}
   maxAimError: 10
   reloadCooldown: 2
---- !u!114 &794681042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794681030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c775617cafa3bba4489f31af3ca87ee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
-  spawnPoint: {fileID: 134003238}
 --- !u!1 &857150843
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,7 +2355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487881513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.21, y: 0, z: 0}
+  m_LocalPosition: {x: -24.29, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
