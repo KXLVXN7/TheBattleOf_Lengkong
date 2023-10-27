@@ -5,18 +5,20 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private bool isGrounded;
+    private bool isJumping = false; // Tambah variabel ini
+    private bool isCrouching = false; // Tambah variabel ini
     private float moveSpeed = 5f;
     public Animator anim;
     [SerializeField] private float jumpForce = 15f;
-    
+
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        anim= GetComponent<Animator>();
+        spriteRenderer = GetComponent < SpriteRenderer>();
+        anim = GetComponent < Animator>();
     }
 
     void Update()
@@ -37,25 +39,28 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Gerakan Lompat
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space) && !isCrouching)
         {
             Debug.Log("Lompat");
             anim.SetBool("Lompat", true);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            isJumping = true;
             isGrounded = false;
-
         }
         else
         {
             anim.SetBool("Lompat", false);
         }
-        if(Input.GetKey(KeyCode.S)) 
+
+        if (Input.GetKey(KeyCode.S) && isGrounded && !isJumping)
         {
             anim.SetBool("Jongkok", true);
+            isCrouching = true;
         }
         else
         {
             anim.SetBool("Jongkok", false);
+            isCrouching = false;
         }
     }
 
@@ -65,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            isJumping = false;
         }
     }
 

@@ -6,7 +6,7 @@ public class Projectiles : MonoBehaviour
 {
     public float speed = 10f; // Kecepatan proyektil
     public Vector3 direction;
-    public float maxRange = 2f; // Jarak maksimum proyektil
+    public float maxRange = 3f; // Jarak maksimum proyektil
 
     private Vector3 initialPosition; // Menyimpan posisi awal proyektil
 
