@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class FireProjectile : MonoBehaviour
 {
@@ -10,7 +13,7 @@ public class FireProjectile : MonoBehaviour
     public int maxBulletsPerMinute = 24; // Jumlah peluru maksimum dalam 1 menit
     private int bulletsFired = 0; // Jumlah peluru yang sudah ditembakkan
     private float lastFireTime = 0.0f;
-
+    public Text bulletText; // Referensi ke komponen UI Text
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && CanFire())
@@ -48,6 +51,17 @@ public class FireProjectile : MonoBehaviour
             // Catat waktu terakhir peluru ditembakkan dan tambah jumlah peluru yang sudah ditembakkan
             lastFireTime = Time.time;
             bulletsFired++;
+
+            // Perbarui teks pada UI Text
+            UpdateBulletCounter();
+        }
+    }
+    void UpdateBulletCounter()
+    {
+        // Pastikan bulletText telah diatur di inspektor
+        if (bulletText != null)
+        {
+            bulletText.text = "Bullets: " + (maxBulletsPerMinute - bulletsFired).ToString();
         }
     }
 }
