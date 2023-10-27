@@ -6,10 +6,30 @@ public class Projectiles : MonoBehaviour
 {
     public float speed = 10f; // Kecepatan proyektil
     public Vector3 direction;
+    public float maxRange = 4f; // Jarak maksimum proyektil
+
+    private float initialPosition; // Menyimpan posisi awal proyektil
+
+    void Start()
+    {
+        initialPosition = transform.position.magnitude;
+    }
+
     void Update()
     {
         // Menggerakkan proyektil
         transform.position += direction * Time.deltaTime * speed;
+
+        // Mengecek apakah proyektil telah mencapai jarak maksimum
+        if (Vector3.Distance(transform.position, Vector3.zero) - initialPosition >= maxRange)
+        {
+            Destroy(gameObject); // Menghancurkan proyektil jika mencapai jarak maksimum
+        }
+    }
+
+    public void SetDirection(Vector3 newDirection)
+    {
+        direction = newDirection;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
