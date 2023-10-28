@@ -10,7 +10,7 @@ public class FireProjectile : MonoBehaviour
     public GameObject projectilePrefab; // Prefab proyektil
     public Transform spawnPoint; // Titik keluar proyektil
     public float fireRate = 1.0f; // Jangka waktu antara setiap peluru (dalam detik)
-    public int maxBulletsPerMinute = 24; // Jumlah peluru maksimum dalam 1 menit
+    public int maxBulletsPerMinute = 32; // Jumlah peluru maksimum dalam 1 menit
     private int bulletsFired = 0; // Jumlah peluru yang sudah ditembakkan
     private float lastFireTime = 0.0f;
     public Text bulletText; // Referensi ke komponen UI Text
@@ -61,7 +61,7 @@ public class FireProjectile : MonoBehaviour
         // Pastikan bulletText telah diatur di inspektor
         if (bulletText != null)
         {
-            bulletText.text = "Bullets: " + (maxBulletsPerMinute - bulletsFired).ToString();
+            bulletText.text = "Ammo: " + (maxBulletsPerMinute - bulletsFired).ToString();
         }
     }
 }
