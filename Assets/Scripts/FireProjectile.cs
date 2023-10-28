@@ -14,11 +14,17 @@ public class FireProjectile : MonoBehaviour
     private int bulletsFired = 0; // Jumlah peluru yang sudah ditembakkan
     private float lastFireTime = 0.0f;
     public Text bulletText; // Referensi ke komponen UI Text
+    public Animator anim;
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && CanFire())
         {
             ShootProjectile();
+            anim.SetBool("Nembak", true);
+        }
+        else
+        {
+            anim.SetBool("Nembak", false);
         }
 
         if (bulletsFired >= maxBulletsPerMinute)

@@ -27,7 +27,7 @@ public class EnemySpawnManager : MonoBehaviour
             // Tambahkan jumlah totalEnemiesSpawned
             totalEnemiesSpawned++;
 
-            yield return new WaitForSeconds(2f); // Atur waktu spawning sesuai kebutuhan
+            yield return new WaitForSeconds(7f); // Atur waktu spawning sesuai kebutuhan
         }
     }
 

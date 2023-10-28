@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 86aad87b16fa5bf4e950a836bee161d7
+guid: 5f57be75109c9ec4f8039d733ee09325
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,12 +105,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Soldier Shoot_0
+      name: daan_morgotwalk-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 890
+        width: 790
         height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -119,19 +119,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8a02484132ee1646a9f4e5990cd76ef
-      internalID: 2000416777
+      spriteID: 293225f266b9fd14d889e438541fb852
+      internalID: 565919512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier Shoot_1
+      name: daan_morgotwalk-Sheet_1
       rect:
         serializedVersion: 2
-        x: 890
+        x: 790
         y: 0
-        width: 890
+        width: 790
         height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -140,19 +140,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6800e19a8781f88489b94bbbb5775878
-      internalID: -406851531
+      spriteID: 2d1cc98af624fbb43aca3a1408b6501b
+      internalID: -1809361350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier Shoot_2
+      name: daan_morgotwalk-Sheet_2
       rect:
         serializedVersion: 2
-        x: 1780
+        x: 1580
         y: 0
-        width: 890
+        width: 790
         height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -161,19 +161,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f3c09ffafe0b8444a7ae1f4b9e0fdc4
-      internalID: -1129372526
+      spriteID: a72bae3225f10884e986b99ffd6bf3a6
+      internalID: 780132793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier Shoot_3
+      name: daan_morgotwalk-Sheet_3
       rect:
         serializedVersion: 2
-        x: 2670
+        x: 2370
         y: 0
-        width: 890
+        width: 790
         height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -182,19 +182,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84378232d7b67b9458bde762f5affa48
-      internalID: -541652325
+      spriteID: 74a5a942206057a49b18c9d2f07d81f1
+      internalID: 340289091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier Shoot_4
+      name: daan_morgotwalk-Sheet_4
       rect:
         serializedVersion: 2
-        x: 3560
+        x: 3160
         y: 0
-        width: 890
+        width: 790
         height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -203,19 +203,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43f47372f00216d4085a77310990be6f
-      internalID: -113960461
+      spriteID: 152002d74f038da40a1d00c8198f80e3
+      internalID: -1168610848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier Shoot_5
+      name: daan_morgotwalk-Sheet_5
       rect:
         serializedVersion: 2
-        x: 4450
+        x: 3950
         y: 0
-        width: 890
+        width: 790
         height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -224,19 +224,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbca53febf79815438a3e65694a95e4d
-      internalID: 927466529
+      spriteID: 58c3e0ec72db8af498bb055e34301909
+      internalID: 787709880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier Shoot_6
+      name: daan_morgotwalk-Sheet_6
       rect:
         serializedVersion: 2
-        x: 5340
+        x: 4740
         y: 0
-        width: 890
+        width: 790
         height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -245,19 +245,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc6610521c70e0447bc86f4b58ba0d98
-      internalID: -1838201613
+      spriteID: eaf0988053bb1de46a3ee614abb1ee26
+      internalID: -180474345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier Shoot_7
+      name: daan_morgotwalk-Sheet_7
       rect:
         serializedVersion: 2
-        x: 6230
+        x: 5530
         y: 0
-        width: 890
+        width: 790
         height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -266,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9de5df1029790d42bb495a6746c56d2
-      internalID: 1719591306
+      spriteID: 5b946ef40a3f5754b8c7d91ec4dff609
+      internalID: 1911106194
       vertices: []
       indices: 
       edges: []
@@ -283,14 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Soldier Shoot_1: -406851531
-      Soldier Shoot_4: -113960461
-      Soldier Shoot_2: -1129372526
-      Soldier Shoot_0: 2000416777
-      Soldier Shoot_5: 927466529
-      Soldier Shoot_3: -541652325
-      Soldier Shoot_7: 1719591306
-      Soldier Shoot_6: -1838201613
+      daan_morgotwalk-Sheet_3: 340289091
+      daan_morgotwalk-Sheet_2: 780132793
+      daan_morgotwalk-Sheet_4: -1168610848
+      daan_morgotwalk-Sheet_1: -1809361350
+      daan_morgotwalk-Sheet_6: -180474345
+      daan_morgotwalk-Sheet_5: 787709880
+      daan_morgotwalk-Sheet_0: 565919512
+      daan_morgotwalk-Sheet_7: 1911106194
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

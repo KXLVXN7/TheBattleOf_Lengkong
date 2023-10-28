@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent < SpriteRenderer>();
-        anim = GetComponent < Animator>();
+        anim = GetComponent <Animator>();
     }
 
     void Update()
@@ -26,7 +26,18 @@ public class PlayerMovement : MonoBehaviour
         // Gerak Horizontal KIRI/KANAN
         float moveX = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(moveX * moveSpeed, rb.velocity.y);
+        
         rb.velocity = movement;
+        // Animasi jalan
+        if (moveX != 0)
+        {
+            anim.SetBool("Jalan", true);
+        }
+        else
+        {
+            anim.SetBool("Jalan", false);
+        }
+
 
         // Gerakan Flip
         if (moveX < 0)
