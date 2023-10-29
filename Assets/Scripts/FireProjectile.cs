@@ -10,7 +10,7 @@ public class FireProjectile : MonoBehaviour
     public GameObject projectilePrefab; // Prefab proyektil
     public Transform spawnPoint; // Titik keluar proyektil
     public float fireRate = 1.0f; // Jangka waktu antara setiap peluru (dalam detik)
-    public int maxBulletsPerMinute = 50; // Jumlah peluru maksimum dalam 1 menit
+    public int maxBulletsPerMinute = 8; // Jumlah peluru maksimum dalam 1 menit
     private int bulletsFired = 0; // Jumlah peluru yang sudah ditembakkan
     private float lastFireTime = 0.0f;
     public Text bulletText; // Referensi ke komponen UI Text
@@ -83,32 +83,59 @@ public class FireProjectile : MonoBehaviour
             float timeToReload = timePerBulletReload * (maxBulletsPerMinute - bulletsFired);
 
             // Ubah waktu reloading ke format yang sesuai (misalnya, menit:detik)
-            int minutes = Mathf.FloorToInt(timeToReload / 60);
-            int seconds = Mathf.FloorToInt(timeToReload % 60);
+            //int minutes = Mathf.FloorToInt(timeToReload / 60);
+            //int seconds = Mathf.FloorToInt(timeToReload % 60);
             bulletText.text = "Ammo: " + (maxBulletsPerMinute - bulletsFired).ToString();
-            bulletReload.text = "Reloading: " + minutes.ToString("00") + ":" + seconds.ToString("00");
+            //bulletReload.text = "Reloading: " + minutes.ToString("00") + ":" + seconds.ToString("00");
 
         }
     }
 
     void StartReload()
     {
-        isReloading = true;
-        bulletsFired = 0;
-        lastFireTime = Time.time;
+        if (!isReloading)
+        {
+            isReloading = true;
+            bulletsFired = 0;
+            lastFireTime = Time.time;
 
+            // Trigger reload animation if you have one
+            
 
-        // Start a coroutine to handle the reloading time
-        StartCoroutine(ReloadCoroutine());
+            // Start a coroutine to handle the reloading time
+            StartCoroutine(ReloadCoroutine());
+        }
     }
     IEnumerator ReloadCoroutine()
     {
-        yield return new WaitForSeconds(reloadTime);
+        float remainingTime = reloadTime;
+
+        while (remainingTime > 0f)
+        {
+            // Update UI text with reloading countdown
+            UpdateReloadText(remainingTime);
+
+            // Wait for a short duration before updating the countdown again
+            yield return new WaitForSeconds(0.1f);
+
+            // Decrease remaining time by the time waited
+            remainingTime -= 0.1f;
+        }
+        //yield return new WaitForSeconds(reloadTime);
 
         // Reload is complete
         isReloading = false;
 
         // Update UI and reset reload animation
         UpdateBulletCounter();
+    }
+
+    void UpdateReloadText(float remainingTime)
+    {
+        // Update the reload countdown text with the remaining time formatted as seconds
+        if (bulletReload != null)
+        {
+            bulletReload.text = "Reload Cooldown : " + Mathf.CeilToInt(remainingTime).ToString();
+        }
     }
 }

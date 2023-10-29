@@ -669,8 +669,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 356423131647701949, guid: 08611970103a5064ea4fe9d4c351b3f5, type: 3}
   spawnPoint: {fileID: 1275234277}
-  fireRate: 3
-  maxBulletsPerMinute: 50
+  fireRate: 2
+  maxBulletsPerMinute: 10
   bulletText: {fileID: 2008822035}
   bulletReload: {fileID: 768321189}
   anim: {fileID: 253779790}
@@ -1446,7 +1446,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Reload : 00:00'
+  m_Text: 'Reload Cooldown : '
 --- !u!222 &768321190
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2855,7 +2855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1580699488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3798,7 +3798,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Ammo: 50'
+  m_Text: 'Ammo: 8'
 --- !u!222 &2008822036
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4032,6 +4032,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 676169138}
+    - target: {fileID: 5183160010057572939, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.93
+      objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428578, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -4086,7 +4090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428587, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428587, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_TagString
@@ -4104,6 +4108,10 @@ PrefabInstance:
       propertyPath: detection
       value: 
       objectReference: {fileID: 1203977854}
+    - target: {fileID: 5183160010466428605, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
+      propertyPath: maxPeluru
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428605, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: detection2
       value: 
