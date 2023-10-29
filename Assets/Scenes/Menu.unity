@@ -593,7 +593,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87658df8f38c7264baa0c706378a1622, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a38f407698e9f1f429659a7936e489be, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.7
   m_Pitch: 1
@@ -4920,7 +4920,7 @@ MonoBehaviour:
     yang panjang mencapai pinggang dan menanam rambut itu bersama jenasah Daan Mogot.
     Setelah itu rambutnya tak pernah dibiarkan panjang lagi.
 
-    
+
 
 '
   m_isRightToLeft: 0
@@ -5476,7 +5476,7 @@ MonoBehaviour:
     berhasil meloloskan diri pada 26 Januari 1946 dan tiba di Markas Komando Resimen
     TKR Tangerang pada pagi keesokan harinya.
 
-    
+
 
 '
   m_isRightToLeft: 0
@@ -5622,7 +5622,7 @@ MonoBehaviour:
     untuk mendahului jangan sampai senjata tentara Jepang yang sudah menyerah tidak
     jatuh ke tangan kepada tentara Belanda.
 
-    
+
 
 '
   m_isRightToLeft: 0
@@ -5769,7 +5769,7 @@ MonoBehaviour:
     Islam Salim, Jopie Bolang, Oetardjo, Sadikin (Resimen Cikampek), Darsono (Resimen
     Cikampek), dan lain-lain.
 
-    
+
 
 '
   m_isRightToLeft: 0
@@ -10905,7 +10905,7 @@ MonoBehaviour:
     berhasil meloloskan diri pada 26 Januari 1946 dan tiba di Markas Komando Resimen
     TKR Tangerang pada pagi keesokan harinya.
 
-    
+
 
 '
   m_isRightToLeft: 0
@@ -11605,7 +11605,7 @@ MonoBehaviour:
     Kapten Rukman, Kapten Kemal Idris, Kapten Oscar (Otje) Mochtan, Kapten Jopie
     Bolang, Kapten Endjon Djajaroekmantara, Sersan Bahruddin, dan Sersan Sirodz.
 
-    
+
 
     Pada
     saat yang hampir bersamaan, yaitu pada tanggal 5 November 1945, di Yogyakarta
@@ -12584,7 +12584,7 @@ MonoBehaviour:
     oleh Markas Besar Tentara (MBT) di Jakarta dan pada 18 November 1945 berdirilah
     Militaire Academie Tangerang (MAT), dan Daan Mogot pun dilantik sebagai Direktur.
 
-    
+
 
 '
   m_isRightToLeft: 0
