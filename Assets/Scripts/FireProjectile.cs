@@ -18,12 +18,15 @@ public class FireProjectile : MonoBehaviour
     private bool isReloading = false;
     private float reloadTime = 5f; // Time it takes to reload in seconds
     public Animator anim;
+    [SerializeField] private AudioSource gunshotSFX;
+    [SerializeField] private AudioSource reloadSFX;
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && CanFire())
         {
             ShootProjectile();
             anim.SetBool("Nembak", true);
+            gunshotSFX.Play();
         }
         else
         {
@@ -42,6 +45,7 @@ public class FireProjectile : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && !isReloading && bulletsFired > 0)
         {
             StartReload();
+            reloadSFX.Play();
         }
     }
 

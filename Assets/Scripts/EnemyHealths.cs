@@ -14,7 +14,7 @@ public class EnemyHealths : MonoBehaviour
     [SerializeField] private Image HPBarEnemy;
 
     private bool isDead = false;
-    private int killCount = 0; // Menambahkan variabel untuk menghitung jumlah kill
+    private static int killCount = 0; // Menambahkan variabel untuk menghitung jumlah kill
 
     void Start()
     {
@@ -55,7 +55,7 @@ public class EnemyHealths : MonoBehaviour
         {
             isDead = true;
             killCount++; // Menambahkan 1 ke hitungan kill
-            enemyDied.text = "Kills: " + killCount++; // Memperbarui teks dengan jumlah kill
+            enemyDied.text = "Kills: " + killCount; // Memperbarui teks dengan jumlah kill
             Debug.Log("Enemy mati! Total Kills: " + killCount);
             Destroy(gameObject);
         }
