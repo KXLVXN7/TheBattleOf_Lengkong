@@ -38,6 +38,7 @@ public class Health : MonoBehaviour
     {
         if(HPBar.fillAmount == 0)
         {
+            //GetComponent<Animator>().SetTrigger("PlayerDead");
             Destroy(gameObject);
         }
     }
