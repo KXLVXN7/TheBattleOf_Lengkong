@@ -16,4 +16,8 @@ public class ChangeScene : MonoBehaviour
     {
         Application.Quit();
     }
+    public void DestroyAll()
+    {
+        DestroyObject(gameObject);
+    }
 }
