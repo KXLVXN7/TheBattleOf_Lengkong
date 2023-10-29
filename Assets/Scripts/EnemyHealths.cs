@@ -32,7 +32,7 @@ public class EnemyHealths : MonoBehaviour
 
     public void takeDamage(float damage)
     {
-        if (!isDead)
+        if (!isDead && !gameObject.CompareTag("ProjectileEnemy"))
         {
             currentHPEnemy -= damage;
             currentHPEnemy = Mathf.Clamp(currentHPEnemy, 0, maxHPEnemy); // Pastikan kesehatan tidak kurang dari 0 atau melebihi maksimum

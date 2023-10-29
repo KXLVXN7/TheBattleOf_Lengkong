@@ -15,6 +15,8 @@ public class FireProjectile : MonoBehaviour
     private float lastFireTime = 0.0f;
     public Text bulletText; // Referensi ke komponen UI Text
     public Text bulletReload;
+    private bool isReloading = false;
+    private float reloadTime = 5f; // Time it takes to reload in seconds
     public Animator anim;
     void Update()
     {
@@ -35,6 +37,11 @@ public class FireProjectile : MonoBehaviour
             {
                 bulletsFired = 0;
             }
+        }
+        // Check if the player wants to reload (for example, when pressing the "R" key)
+        if (Input.GetKeyDown(KeyCode.R) && !isReloading && bulletsFired > 0)
+        {
+            StartReload();
         }
     }
 
@@ -82,5 +89,26 @@ public class FireProjectile : MonoBehaviour
             bulletReload.text = "Reloading: " + minutes.ToString("00") + ":" + seconds.ToString("00");
 
         }
+    }
+
+    void StartReload()
+    {
+        isReloading = true;
+        bulletsFired = 0;
+        lastFireTime = Time.time;
+
+
+        // Start a coroutine to handle the reloading time
+        StartCoroutine(ReloadCoroutine());
+    }
+    IEnumerator ReloadCoroutine()
+    {
+        yield return new WaitForSeconds(reloadTime);
+
+        // Reload is complete
+        isReloading = false;
+
+        // Update UI and reset reload animation
+        UpdateBulletCounter();
     }
 }

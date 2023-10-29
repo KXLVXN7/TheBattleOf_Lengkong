@@ -37,19 +37,23 @@ public class Projectiles : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Health healthComponent = collision.gameObject.GetComponent<Health>();
-        EnemyHealths EnemyhealthComponent = collision.gameObject.GetComponent<EnemyHealths>();
-        if (EnemyhealthComponent != null)
+        if (!collision.gameObject.CompareTag("ProjectileEnemy"))
         {
-            EnemyhealthComponent.takeDamage(damage);
-        }
-        else if (healthComponent != null)
-        {
-            healthComponent.takeDamage(enemyDamage);
-        }
-        else
-        {
-            return;
+            Health healthComponent = collision.gameObject.GetComponent<Health>();
+            EnemyHealths EnemyhealthComponent = collision.gameObject.GetComponent<EnemyHealths>();
+
+            if (EnemyhealthComponent != null)
+            {
+                EnemyhealthComponent.takeDamage(damage);
+            }
+            else if (healthComponent != null)
+            {
+                healthComponent.takeDamage(enemyDamage);
+            }
+            else
+            {
+                return;
+            }
         }
 
         /*        if (healthComponent != null)

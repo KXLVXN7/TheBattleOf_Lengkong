@@ -26,7 +26,10 @@ public class EnemySpawnManager : MonoBehaviour
             {
                 spawning = true;
                 yield return new WaitForSeconds(5f); // Menunggu sebelum spawn musuh berikutnya
-                Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+                if (spawnPoint != null)
+                {
+                    Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity); //fix bug transform
+                }
                 spawning = false;
             }
             yield return null;
