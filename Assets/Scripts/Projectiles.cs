@@ -37,29 +37,34 @@ public class Projectiles : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("ProjectileEnemy"))
+        // Mengecek apakah objek yang ditabrak adalah musuh (dengan tag "Enemy")
+        if (collision.gameObject.CompareTag("Enemy"))
         {
+            // Mengambil komponen Health dari objek yang ditabrak
             Health healthComponent = collision.gameObject.GetComponent<Health>();
-            EnemyHealths EnemyhealthComponent = collision.gameObject.GetComponent<EnemyHealths>();
 
-            if (EnemyhealthComponent != null)
+            // Mengambil komponen EnemyHealths dari objek yang ditabrak
+            EnemyHealths enemyHealthComponent = collision.gameObject.GetComponent<EnemyHealths>();
+
+            // Mengecek apakah objek yang ditabrak memiliki komponen Health
+            if (enemyHealthComponent != null)
             {
-                EnemyhealthComponent.takeDamage(damage);
+                // Menyerang musuh dengan damage yang sesuai
+                enemyHealthComponent.takeDamage(damage);
             }
             else if (healthComponent != null)
             {
+                // Menyerang musuh dengan damage yang sesuai
                 healthComponent.takeDamage(enemyDamage);
             }
-            else
-            {
-                return;
-            }
-        }
 
-        /*        if (healthComponent != null)
-                {
-                    healthComponent.takeDamage(damage);
-                }*/
-        Destroy(gameObject);
+            // Menghancurkan proyektil setelah menabrak musuh
+            Destroy(gameObject);
+        }
+        else if (!collision.gameObject.CompareTag("ProjectileEnemy"))
+        {
+            // Menghancurkan proyektil jika menabrak objek selain musuh dan proyektil musuh
+            Destroy(gameObject);
+        }
     }
 }
