@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     public static bool GameIsPaused = false;
 
     private bool isDead = false;
+    public Animator anim;
 
     void Start()
     {
@@ -57,12 +58,13 @@ public class Health : MonoBehaviour
             isDead = true;
             // Tambahkan logika kematian pemain di sini, misalnya menampilkan pesan kematian, mengakhiri permainan, atau mengatur ulang level
             Debug.Log("Player mati!");
+            anim.SetBool("playerDeath", true);
             // Mengatur jeda selama 4 detik
             StartCoroutine(DeathPauseAndShowUI());
         }
     }
 
-    private IEnumerator DeathPauseAndShowUI()
+    private IEnumerator DeathPauseAndShowUI()   
     {
         // Set Time.timeScale ke 0 untuk menghentikan permainan
         Dead.SetActive(true); // Gantilah yourDeathUI dengan objek UI kematian yang sesuai

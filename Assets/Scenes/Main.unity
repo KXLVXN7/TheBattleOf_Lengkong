@@ -953,6 +953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dead: {fileID: 965354128}
   HPBar: {fileID: 2124749394}
+  anim: {fileID: 253779790}
 --- !u!95 &253779790
 Animator:
   serializedVersion: 5
@@ -1588,7 +1589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428587, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428587, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_TagString
@@ -3112,7 +3113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428587, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428587, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_TagString
@@ -3226,7 +3227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428587, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428587, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_TagString
@@ -5902,7 +5903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428587, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428587, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_TagString
