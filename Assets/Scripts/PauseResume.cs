@@ -20,6 +20,12 @@ public class PauseResume : MonoBehaviour
             }
         }
     }
+
+    private void Start()
+    {
+        GameIsPaused = true;
+        Debug.Log("Kondisi Pause");
+    }
     public void Resume()
     {
         Debug.Log("Lanjut");

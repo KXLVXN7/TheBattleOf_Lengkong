@@ -9,6 +9,7 @@ public class Projectiles : MonoBehaviour
     public float maxRange = 3f; // Jarak maksimum proyektil
 
     private Vector3 initialPosition; // Menyimpan posisi awal proyektil
+    private float damage = 5f; // Definisi variabel damage
 
     void Start()
     {
@@ -35,10 +36,12 @@ public class Projectiles : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Health>())
+        Health healthComponent = collision.gameObject.GetComponent<Health>();
+        if (healthComponent != null)
         {
-            collision.gameObject.GetComponent<Health>().takeDamage();
+            healthComponent.takeDamage(damage);
         }
         Destroy(gameObject);
     }
+
 }

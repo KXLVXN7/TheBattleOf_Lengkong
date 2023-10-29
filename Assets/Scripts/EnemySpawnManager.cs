@@ -7,27 +7,28 @@ public class EnemySpawnManager : MonoBehaviour
     public GameObject enemyPrefab; // Prefab musuh
     public Transform spawnPoint; // Titik spawn musuh
 
-    private int totalEnemiesSpawned = 0;
     private int totalEnemiesDied = 0;
+    private bool spawning = false;
+    private bool playerWon = false; // Tambahkan variabel untuk memeriksa apakah pemain menang
 
     private void Start()
     {
-        totalEnemiesSpawned = 0;
         totalEnemiesDied = 0;
         StartCoroutine(SpawnEnemy());
     }
 
     private IEnumerator SpawnEnemy()
     {
-        while (totalEnemiesDied < 5) // Ubah angka 5 sesuai dengan jumlah musuh yang ingin Anda tentukan
+        while (totalEnemiesDied < 5 && !playerWon) // Ubah angka 5 sesuai dengan jumlah musuh yang ingin Anda tentukan
         {
-            // Spawn musuh di titik spawnPoint
-            Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
-
-            // Tambahkan jumlah totalEnemiesSpawned
-            totalEnemiesSpawned++;
-
-            yield return new WaitForSeconds(7f); // Atur waktu spawning sesuai kebutuhan
+            if (!spawning)
+            {
+                spawning = true;
+                yield return new WaitForSeconds(7f); // Menunggu sebelum spawn musuh berikutnya
+                Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+                spawning = false;
+            }
+            yield return null;
         }
     }
 
@@ -36,8 +37,9 @@ public class EnemySpawnManager : MonoBehaviour
     {
         totalEnemiesDied++;
 
-        if (totalEnemiesDied >= 5)
+        if (totalEnemiesDied >= 5 && !playerWon)
         {
+            playerWon = true; // Atur bahwa pemain menang
             // Anda bisa tambahkan logika atau pesan kemenangan di sini
             Debug.Log("Player wins!");
         }
