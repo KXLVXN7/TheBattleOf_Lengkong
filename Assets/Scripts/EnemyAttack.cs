@@ -68,6 +68,6 @@ public class EnemyAttack : MonoBehaviour
             lastFireTime = Time.time;
             bulletsFired++;
         }
-        Debug.Log("Shooting at direction: " + shootingDirection);
+        /*Debug.Log("Shooting at direction: " + shootingDirection);*/
     }
 }

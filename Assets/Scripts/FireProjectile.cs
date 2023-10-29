@@ -10,10 +10,11 @@ public class FireProjectile : MonoBehaviour
     public GameObject projectilePrefab; // Prefab proyektil
     public Transform spawnPoint; // Titik keluar proyektil
     public float fireRate = 1.0f; // Jangka waktu antara setiap peluru (dalam detik)
-    public int maxBulletsPerMinute = 32; // Jumlah peluru maksimum dalam 1 menit
+    public int maxBulletsPerMinute = 50; // Jumlah peluru maksimum dalam 1 menit
     private int bulletsFired = 0; // Jumlah peluru yang sudah ditembakkan
     private float lastFireTime = 0.0f;
     public Text bulletText; // Referensi ke komponen UI Text
+    public Text bulletReload;
     public Animator anim;
     void Update()
     {
@@ -58,16 +59,28 @@ public class FireProjectile : MonoBehaviour
             lastFireTime = Time.time;
             bulletsFired++;
 
-            // Perbarui teks pada UI Text
+            // Perbarui teks pada UI Text untuk informasi amunisi dan waktu reloading
             UpdateBulletCounter();
         }
     }
+
     void UpdateBulletCounter()
     {
         // Pastikan bulletText telah diatur di inspektor
         if (bulletText != null)
         {
+            // Hitung waktu per reloading satu peluru dalam detik
+            float timePerBulletReload = 60.0f / maxBulletsPerMinute;
+
+            // Hitung waktu yang tersisa hingga peluru terisi kembali
+            float timeToReload = timePerBulletReload * (maxBulletsPerMinute - bulletsFired);
+
+            // Ubah waktu reloading ke format yang sesuai (misalnya, menit:detik)
+            int minutes = Mathf.FloorToInt(timeToReload / 60);
+            int seconds = Mathf.FloorToInt(timeToReload % 60);
             bulletText.text = "Ammo: " + (maxBulletsPerMinute - bulletsFired).ToString();
+            bulletReload.text = "Reloading: " + minutes.ToString("00") + ":" + seconds.ToString("00");
+
         }
     }
 }

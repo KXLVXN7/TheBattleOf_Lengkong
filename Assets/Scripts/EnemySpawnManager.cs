@@ -19,12 +19,13 @@ public class EnemySpawnManager : MonoBehaviour
 
     private IEnumerator SpawnEnemy()
     {
-        while (totalEnemiesDied < 5 && !playerWon) // Ubah angka 5 sesuai dengan jumlah musuh yang ingin Anda tentukan
+        while (totalEnemiesDied < 1 && !playerWon) // Ubah angka 5 sesuai dengan jumlah musuh yang ingin Anda tentukan
         {
-            if (!spawning)
+            if (!spawning && spawnPoint != null)
+
             {
                 spawning = true;
-                yield return new WaitForSeconds(7f); // Menunggu sebelum spawn musuh berikutnya
+                yield return new WaitForSeconds(5f); // Menunggu sebelum spawn musuh berikutnya
                 Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
                 spawning = false;
             }

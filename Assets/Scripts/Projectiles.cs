@@ -9,7 +9,8 @@ public class Projectiles : MonoBehaviour
     public float maxRange = 3f; // Jarak maksimum proyektil
 
     private Vector3 initialPosition; // Menyimpan posisi awal proyektil
-    private float damage = 5f; // Definisi variabel damage
+    private float damage = 8f; // Definisi variabel damage.
+    private float enemyDamage = 3f;
 
     void Start()
     {
@@ -37,11 +38,24 @@ public class Projectiles : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Health healthComponent = collision.gameObject.GetComponent<Health>();
-        if (healthComponent != null)
+        EnemyHealths EnemyhealthComponent = collision.gameObject.GetComponent<EnemyHealths>();
+        if (EnemyhealthComponent != null)
         {
-            healthComponent.takeDamage(damage);
+            EnemyhealthComponent.takeDamage(damage);
         }
+        else if (healthComponent != null)
+        {
+            healthComponent.takeDamage(enemyDamage);
+        }
+        else
+        {
+            return;
+        }
+
+        /*        if (healthComponent != null)
+                {
+                    healthComponent.takeDamage(damage);
+                }*/
         Destroy(gameObject);
     }
-
 }
