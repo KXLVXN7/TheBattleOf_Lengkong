@@ -44,6 +44,7 @@ public class EnemyHealth : MonoBehaviour
         {
             // Panggil method untuk menghitung musuh yang mati
             spawnManager.EnemyDied();
+            
             Destroy(gameObject);
         }
     }
