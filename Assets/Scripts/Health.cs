@@ -7,8 +7,9 @@ public class Health : MonoBehaviour
 {
     private float maxHP = 100;
     private float currentHP = 100;
-
+    public GameObject Dead;
     [SerializeField] private Image HPBar;
+    public static bool GameIsPaused = false;
 
     private bool isDead = false;
 
@@ -56,7 +57,27 @@ public class Health : MonoBehaviour
             isDead = true;
             // Tambahkan logika kematian pemain di sini, misalnya menampilkan pesan kematian, mengakhiri permainan, atau mengatur ulang level
             Debug.Log("Player mati!");
-            Destroy(gameObject);
+            // Mengatur jeda selama 4 detik
+            StartCoroutine(DeathPauseAndShowUI());
         }
     }
+
+    private IEnumerator DeathPauseAndShowUI()
+    {
+        // Set Time.timeScale ke 0 untuk menghentikan permainan
+        Dead.SetActive(true); // Gantilah yourDeathUI dengan objek UI kematian yang sesuai
+        Time.timeScale = 0f;
+
+        // Jeda selama 4 detik
+        yield return new WaitForSeconds(4.0f);
+
+        // Tampilkan UI atau lakukan tindakan lain, contoh:
+       
+
+        // Selanjutnya, Anda dapat menambahkan logika lain, seperti mengakhiri permainan atau mengatur ulang level
+
+        // Set Time.timeScale kembali ke 1 untuk melanjutkan permainan
+/*        Time.timeScale = 1f;
+*/    }
+
 }

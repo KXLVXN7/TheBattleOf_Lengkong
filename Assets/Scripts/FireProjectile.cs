@@ -89,7 +89,7 @@ public class FireProjectile : MonoBehaviour
             // Ubah waktu reloading ke format yang sesuai (misalnya, menit:detik)
             //int minutes = Mathf.FloorToInt(timeToReload / 60);
             //int seconds = Mathf.FloorToInt(timeToReload % 60);
-            bulletText.text = "     : " + (maxBulletsPerMinute - bulletsFired).ToString();
+            bulletText.text = ": " + (maxBulletsPerMinute - bulletsFired).ToString();
             //bulletReload.text = "Reloading: " + minutes.ToString("00") + ":" + seconds.ToString("00");
 
         }

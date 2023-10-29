@@ -9,8 +9,8 @@ public class Projectiles : MonoBehaviour
     public float maxRange = 3f; // Jarak maksimum proyektil
 
     private Vector3 initialPosition; // Menyimpan posisi awal proyektil
-    private float damage = 8f; // Definisi variabel damage.
-    private float enemyDamage = 3f;
+    public float playerDamage = 8f; // Definisi variabel damage untuk pemain
+    public float enemyDamage = 10f; // Definisi variabel damage untuk musuh
 
     void Start()
     {
@@ -40,30 +40,38 @@ public class Projectiles : MonoBehaviour
         // Mengecek apakah objek yang ditabrak adalah musuh (dengan tag "Enemy")
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Mengambil komponen Health dari objek yang ditabrak
-            Health healthComponent = collision.gameObject.GetComponent<Health>();
-
             // Mengambil komponen EnemyHealths dari objek yang ditabrak
             EnemyHealths enemyHealthComponent = collision.gameObject.GetComponent<EnemyHealths>();
 
-            // Mengecek apakah objek yang ditabrak memiliki komponen Health
+            // Mengecek apakah objek yang ditabrak memiliki komponen EnemyHealths
             if (enemyHealthComponent != null)
             {
                 // Menyerang musuh dengan damage yang sesuai
-                enemyHealthComponent.takeDamage(damage);
-            }
-            else if (healthComponent != null)
-            {
-                // Menyerang musuh dengan damage yang sesuai
-                healthComponent.takeDamage(enemyDamage);
-            }
+                enemyHealthComponent.takeDamage(enemyDamage);
 
-            // Menghancurkan proyektil setelah menabrak musuh
-            Destroy(gameObject);
+                // Menghancurkan proyektil setelah menabrak musuh
+                Destroy(gameObject);
+            }
         }
+        // Mengecek apakah objek yang ditabrak adalah pemain (dengan tag "Player")
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            // Mengambil komponen Health dari objek pemain
+            Health playerHealthComponent = collision.gameObject.GetComponent<Health>();
+
+            // Mengecek apakah objek yang ditabrak memiliki komponen Health
+            if (playerHealthComponent != null)
+            {
+                // Menyerang pemain dengan damage yang sesuai
+                playerHealthComponent.takeDamage(playerDamage);
+
+                // Menghancurkan proyektil setelah menabrak pemain
+                Destroy(gameObject);
+            }
+        }
+        // Menghancurkan proyektil jika menabrak objek selain musuh, pemain, dan proyektil musuh
         else if (!collision.gameObject.CompareTag("ProjectileEnemy"))
         {
-            // Menghancurkan proyektil jika menabrak objek selain musuh dan proyektil musuh
             Destroy(gameObject);
         }
     }

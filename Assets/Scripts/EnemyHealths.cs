@@ -55,7 +55,7 @@ public class EnemyHealths : MonoBehaviour
         {
             isDead = true;
             killCount++; // Menambahkan 1 ke hitungan kill
-            enemyDied.text = "Kills: " + killCount; // Memperbarui teks dengan jumlah kill
+            enemyDied.text = ": " + killCount; // Memperbarui teks dengan jumlah kill
             Debug.Log("Enemy mati! Total Kills: " + killCount);
             Destroy(gameObject);
         }
