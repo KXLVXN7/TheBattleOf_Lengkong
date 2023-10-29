@@ -1050,6 +1050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f24c6b2e53015d498b0be8b44087727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   HPBarEnemy: {fileID: 431326085}
 --- !u!1001 &633394898
 PrefabInstance:
@@ -1235,7 +1236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676169136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.46, y: 0, z: -10}
+  m_LocalPosition: {x: 1.1, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1783,6 +1784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f24c6b2e53015d498b0be8b44087727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   HPBarEnemy: {fileID: 189242454}
 --- !u!1 &813350430
 GameObject:
@@ -2245,7 +2247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984436946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.67, y: -2.03, z: -0.0124134645}
+  m_LocalPosition: {x: 2.1, y: -2.03, z: -0.0124134645}
   m_LocalScale: {x: 0.95875007, y: 1.0566376, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2960,6 +2962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f24c6b2e53015d498b0be8b44087727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   HPBarEnemy: {fileID: 2122412048}
 --- !u!1 &1424570616
 GameObject:
@@ -3147,7 +3150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468114795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.75, y: 0, z: 0}
+  m_LocalPosition: {x: 32.08, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3262,7 +3265,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513890656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.61, y: -4.13, z: 0}
+  m_LocalPosition: {x: 28.13, y: -4.13, z: 0}
   m_LocalScale: {x: 0.5233996, y: 0.4853074, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3286,6 +3289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f24c6b2e53015d498b0be8b44087727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   HPBarEnemy: {fileID: 1841204413}
 --- !u!1 &1580699487
 GameObject:
@@ -3305,7 +3309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1580699488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4549,7 +4553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428581, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.88
+      value: 26.92
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428581, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4593,7 +4597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428587, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428587, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: m_TagString

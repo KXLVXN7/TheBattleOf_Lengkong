@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class EnemyHealths : MonoBehaviour
 {
     private float maxHPEnemy = 100;
     private float currentHPEnemy = 100;
+    public Text enemyDied;
+    public Animator anim;
 
     [SerializeField] private Image HPBarEnemy;
 
     private bool isDead = false;
+    private int killCount = 0; // Menambahkan variabel untuk menghitung jumlah kill
 
     void Start()
     {
@@ -35,17 +39,13 @@ public class EnemyHealths : MonoBehaviour
         if (!isDead && !gameObject.CompareTag("ProjectileEnemy"))
         {
             currentHPEnemy -= damage;
-            currentHPEnemy = Mathf.Clamp(currentHPEnemy, 0, maxHPEnemy); // Pastikan kesehatan tidak kurang dari 0 atau melebihi maksimum
+            currentHPEnemy = Mathf.Clamp(currentHPEnemy, 0, maxHPEnemy);
             UpdateHealthBars();
             StartCoroutine(VisualIndicators(Color.red));
             if (currentHPEnemy == 0)
             {
                 Die();
             }
-
-            /* //GetComponent<Animator>().SetTrigger("PlayerDead");
-             Destroy(gameObject);*/
-
         }
     }
 
@@ -54,8 +54,9 @@ public class EnemyHealths : MonoBehaviour
         if (!isDead)
         {
             isDead = true;
-            // Tambahkan logika kematian pemain di sini, misalnya menampilkan pesan kematian, mengakhiri permainan, atau mengatur ulang level
-            Debug.Log("Enemy mati!");
+            killCount++; // Menambahkan 1 ke hitungan kill
+            enemyDied.text = "Kills: " + killCount; // Memperbarui teks dengan jumlah kill
+            Debug.Log("Enemy mati! Total Kills: " + killCount);
             Destroy(gameObject);
         }
     }
