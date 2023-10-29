@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class EnemyHealths : MonoBehaviour
 {
     private float maxHPEnemy = 100;
@@ -16,10 +15,13 @@ public class EnemyHealths : MonoBehaviour
     private bool isDead = false;
     private static int killCount = 0; // Menambahkan variabel untuk menghitung jumlah kill
 
+    private int initialKillCount = 0; // Skor awal yang dapat digunakan untuk mereset skor
+
     void Start()
     {
         currentHPEnemy = maxHPEnemy;
         UpdateHealthBars();
+        initialKillCount = killCount; // Inisialisasi skor awal untuk reset
     }
 
     private void UpdateHealthBars()
@@ -59,5 +61,11 @@ public class EnemyHealths : MonoBehaviour
             Debug.Log("Enemy mati! Total Kills: " + killCount);
             Destroy(gameObject);
         }
+    }
+
+    public void ResetKillCount()
+    {
+        killCount = initialKillCount; // Mereset skor ke nilai awal
+        enemyDied.text = ": " + killCount; // Memperbarui teks dengan jumlah kill yang telah direset
     }
 }
