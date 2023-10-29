@@ -42,6 +42,10 @@ public class Health : MonoBehaviour
             {
                 Die();
             }
+
+            //GetComponent<Animator>().SetTrigger("PlayerDead");
+            Destroy(gameObject);
+
         }
     }
 
