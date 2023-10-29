@@ -25,19 +25,29 @@ public class PlayerMovement : MonoBehaviour
     {
         // Gerak Horizontal KIRI/KANAN
         float moveX = Input.GetAxis("Horizontal");
-        Vector2 movement = new Vector2(moveX * moveSpeed, rb.velocity.y);
-        
-        rb.velocity = movement;
-        // Animasi jalan
-        if (moveX != 0)
+
+        // Cek apakah karakter tidak sedang jongkok, jika tidak, maka izinkan gerakan kiri/kanan
+        if (!isCrouching)
         {
-            anim.SetBool("Jalan", true);
+            Vector2 movement = new Vector2(moveX * moveSpeed, rb.velocity.y);
+            rb.velocity = movement;
+
+            // Animasi jalan
+            if (moveX != 0)
+            {
+                anim.SetBool("Jalan", true);
+            }
+            else
+            {
+                anim.SetBool("Jalan", false);
+            }
         }
         else
         {
+            // Jika karakter sedang jongkok, hentikan gerakan kiri/kanan
+            rb.velocity = new Vector2(0, rb.velocity.y);
             anim.SetBool("Jalan", false);
         }
-
 
         // Gerakan Flip
         if (moveX < 0)
@@ -74,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
             isCrouching = false;
         }
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
