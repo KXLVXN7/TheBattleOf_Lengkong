@@ -46,12 +46,12 @@ public class EnemyHealths : MonoBehaviour
             StartCoroutine(VisualIndicators(Color.red));
             if (currentHPEnemy == 0)
             {
-                Die();
+                DieWithAnimation();
             }
         }
     }
 
-    public void Die()
+    private void DieWithAnimation()
     {
         if (!isDead)
         {
@@ -59,8 +59,18 @@ public class EnemyHealths : MonoBehaviour
             killCount++; // Menambahkan 1 ke hitungan kill
             enemyDied.text = ": " + killCount; // Memperbarui teks dengan jumlah kill
             Debug.Log("Enemy mati! Total Kills: " + killCount);
-            Destroy(gameObject);
+            anim.SetBool("enemy_Death", true);
+
+            // Hancurkan objek setelah animasi selesai (gantilah "AnimationDuration" dengan durasi animasi yang benar)
+            StartCoroutine(DestroyAfterAnimation());
         }
+    }
+
+    private IEnumerator DestroyAfterAnimation()
+    {
+        float animationDuration = 0.3f;/*gantilah dengan durasi animasi yang benar*/;
+        yield return new WaitForSeconds(animationDuration);
+        Destroy(gameObject);
     }
 
     public void ResetKillCount()

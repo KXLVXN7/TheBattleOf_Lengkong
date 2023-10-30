@@ -40,9 +40,10 @@ public class Health : MonoBehaviour
             currentHP = Mathf.Clamp(currentHP, 0, maxHP); // Pastikan kesehatan tidak kurang dari 0 atau melebihi maksimum
             UpdateHealthBar();
             StartCoroutine(VisualIndicator(Color.red));
-            if (currentHP == 0)
+            if (currentHP == 0 )
             {
                 Die();
+                anim.SetBool("playerDeath", true);
             }
 
            /* //GetComponent<Animator>().SetTrigger("PlayerDead");
@@ -58,7 +59,6 @@ public class Health : MonoBehaviour
             isDead = true;
             // Tambahkan logika kematian pemain di sini, misalnya menampilkan pesan kematian, mengakhiri permainan, atau mengatur ulang level
             Debug.Log("Player mati!");
-            anim.SetBool("playerDeath", true);
             // Mengatur jeda selama 4 detik
             StartCoroutine(DeathPauseAndShowUI());
         }

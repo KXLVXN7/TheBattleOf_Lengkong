@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 20060f5ff9143c74c891dc0589c479fd
+guid: 528671108e6c29e4aa375c3b451cb7a7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Soldier_Enemydeath-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 0
+        width: 607
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ca8f7150d5c94428e835a3f7ca3e76
+      internalID: 187843171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Enemydeath-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1803
+        y: 18
+        width: 729
+        height: 505
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc8cdb902aa59fe4185f4038884c43d8
+      internalID: 2019751219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Enemydeath-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 4576
+        y: 0
+        width: 897
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab31f63a496782f459fcbd834629cd3d
+      internalID: -2090732773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soldier_Enemydeath-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 3146
+        y: 26
+        width: 906
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320d5e81fbac0504b85f3530c6751fd1
+      internalID: -831511269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +198,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Soldier_Enemydeath-Sheet_4: -1354672215
+      Soldier_Enemydeath-Sheet_3: -2090732773
+      Soldier_Enemydeath-Sheet_0: -1143590278
+      Soldier_Enemydeath-Sheet_1: 187843171
+      Soldier_Enemydeath-Sheet_5: -831511269
+      Soldier_Enemydeath-Sheet_2: 2019751219
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
