@@ -37,18 +37,13 @@ public class Health : MonoBehaviour
         if (!isDead)
         {
             currentHP -= damage;
-            currentHP = Mathf.Clamp(currentHP, 0, maxHP); // Pastikan kesehatan tidak kurang dari 0 atau melebihi maksimum
+            currentHP = Mathf.Clamp(currentHP, 0, maxHP);
             UpdateHealthBar();
             StartCoroutine(VisualIndicator(Color.red));
-            if (currentHP == 0 )
+            if (currentHP <= 0)
             {
                 Die();
-                anim.SetBool("playerDeath", true);
             }
-
-           /* //GetComponent<Animator>().SetTrigger("PlayerDead");
-            Destroy(gameObject);*/
-
         }
     }
 
@@ -57,29 +52,18 @@ public class Health : MonoBehaviour
         if (!isDead)
         {
             isDead = true;
-            // Tambahkan logika kematian pemain di sini, misalnya menampilkan pesan kematian, mengakhiri permainan, atau mengatur ulang level
             Debug.Log("Player mati!");
-            // Mengatur jeda selama 4 detik
+            anim.SetBool("playerDeath", true);
             StartCoroutine(DeathPauseAndShowUI());
         }
     }
 
-    private IEnumerator DeathPauseAndShowUI()   
+    private IEnumerator DeathPauseAndShowUI()
     {
-        // Set Time.timeScale ke 0 untuk menghentikan permainan
-        Dead.SetActive(true); // Gantilah yourDeathUI dengan objek UI kematian yang sesuai
+        Dead.SetActive(true);
         Time.timeScale = 0f;
-
-        // Jeda selama 4 detik
         yield return new WaitForSeconds(4.0f);
-
-        // Tampilkan UI atau lakukan tindakan lain, contoh:
-       
-
-        // Selanjutnya, Anda dapat menambahkan logika lain, seperti mengakhiri permainan atau mengatur ulang level
-
-        // Set Time.timeScale kembali ke 1 untuk melanjutkan permainan
-/*        Time.timeScale = 1f;
-*/    }
-
+        // Di sini Anda dapat menambahkan logika lain, seperti mengakhiri permainan atau mengatur ulang level
+        Time.timeScale = 1f;
+    }
 }
