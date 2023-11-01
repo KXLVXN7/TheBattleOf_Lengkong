@@ -43,7 +43,12 @@ public class FireProjectile : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && !isReloading && bulletsFired > 0)
         {
             StartReload();
+            anim.SetBool("reload", true);
             reloadSFX.Play();
+        }
+        else
+        {
+            anim.SetBool("reload", false);
         }
     }
 

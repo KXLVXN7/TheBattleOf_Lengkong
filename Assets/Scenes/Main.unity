@@ -1704,7 +1704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDied: {fileID: 138474481}
-  anim: {fileID: 0}
+  anim: {fileID: 794681040}
   HPBarEnemy: {fileID: 431326085}
 --- !u!1001 &633394898
 PrefabInstance:
@@ -2379,8 +2379,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDied: {fileID: 138474481}
-  anim: {fileID: 0}
+  anim: {fileID: 794681040}
   HPBarEnemy: {fileID: 189242454}
+--- !u!95 &794681040
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794681030}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 93cc2bd8f7a19164880e1737b3fa8cf8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &812304838
 GameObject:
   m_ObjectHideFlags: 0
@@ -4310,7 +4330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDied: {fileID: 138474481}
-  anim: {fileID: 0}
+  anim: {fileID: 794681040}
   HPBarEnemy: {fileID: 2122412048}
 --- !u!1 &1424570616
 GameObject:
@@ -4714,7 +4734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDied: {fileID: 138474481}
-  anim: {fileID: 0}
+  anim: {fileID: 794681040}
   HPBarEnemy: {fileID: 1841204413}
 --- !u!1 &1580142255
 GameObject:

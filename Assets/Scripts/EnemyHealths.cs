@@ -59,7 +59,7 @@ public class EnemyHealths : MonoBehaviour
             killCount++; // Menambahkan 1 ke hitungan kill
             enemyDied.text = ": " + killCount; // Memperbarui teks dengan jumlah kill
             Debug.Log("Enemy mati! Total Kills: " + killCount);
-            anim.SetBool("enemy_Death", true);
+            anim.SetBool("enemyDeath", true);
 
             // Hancurkan objek setelah animasi selesai (gantilah "AnimationDuration" dengan durasi animasi yang benar)
             StartCoroutine(DestroyAfterAnimation());
