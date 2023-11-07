@@ -42,6 +42,7 @@ public class Health : MonoBehaviour
             StartCoroutine(VisualIndicator(Color.red));
             if (currentHP <= 0)
             {
+                Debug.Log("MATI KOCAK");
                 Die();
             }
         }
