@@ -110,7 +110,18 @@ public class FireProjectile : MonoBehaviour
     {
         if (bulletReload != null)
         {
-            bulletReload.text = "Reload Cooldown: " + Mathf.CeilToInt(remainingTime).ToString();
+            int displayedTime = Mathf.Max(Mathf.FloorToInt(remainingTime), 0);
+
+            // Check if the remaining time is zero, then display "Reload Cooldown: 0"
+            if (displayedTime == 0)
+            {
+                bulletReload.text = "Reload Cooldown: 0";
+            }
+            else
+            {
+                bulletReload.text = "Reload Cooldown: " + displayedTime.ToString();
+            }
+            //bulletReload.text = "Reload Cooldown: " + Mathf.CeilToInt(remainingTime).ToString();
         }
     }
 }
