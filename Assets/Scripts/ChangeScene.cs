@@ -9,15 +9,16 @@ public class ChangeScene : MonoBehaviour
     public void ChangeScenee(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-    /*    pauseResumeScript.Resume();*/
-        Destroy(gameObject); // Hapus salinan ganda GameManager
+        /*    pauseResumeScript.Resume();*/
+        Destroy(gameObject);
     }
     public void QuitApp()
     {
         Application.Quit();
+        Destroy(gameObject); // Hapus salinan ganda GameManager
     }
-    public void DestroyAll()
+/*    public void DestroyAll()
     {
         DestroyObject(gameObject);
-    }
+    }*/
 }

@@ -73,9 +73,9 @@ public class EnemyHealths : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void ResetKillCount()
+    public void ResetKillCount_NewGame()
     {
-        killCount = initialKillCount; // Mereset skor ke nilai awal
+        killCount = 0; // Mereset skor ke nilai awal
         enemyDied.text = ": " + killCount; // Memperbarui teks dengan jumlah kill yang telah direset
     }
 }
