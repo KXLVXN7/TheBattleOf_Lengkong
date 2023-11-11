@@ -3783,7 +3783,6 @@ GameObject:
   - component: {fileID: 1325732490}
   - component: {fileID: 1325732491}
   - component: {fileID: 1325732492}
-  - component: {fileID: 1325732493}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3927,34 +3926,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1325732493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325732488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11d8f30f91430194aadb1f011d0b77e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetTag: 2
-  OnTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 0b3d6475857ac5447ac3a2ec457d1eed, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1359780379
 GameObject:
   m_ObjectHideFlags: 0

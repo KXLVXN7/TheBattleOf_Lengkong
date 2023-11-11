@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthBagScript : MonoBehaviour
 {
-    public int healthAmount = 10;
+    public int healthAmount = 4;
 
     private void Update()
     {
