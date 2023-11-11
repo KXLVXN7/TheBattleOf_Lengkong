@@ -20,6 +20,12 @@ public class Health : MonoBehaviour
         UpdateHealthBar();
     }
 
+    public void Heal(int amount)
+    {
+        currentHP += amount;
+        Debug.Log("Player menerima Health,Current Health: " + currentHP);
+    }
+
     private void UpdateHealthBar()
     {
         HPBar.fillAmount = currentHP / maxHP;

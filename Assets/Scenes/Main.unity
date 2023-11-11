@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 253779790}
-  jumpForce: 7
+  jumpForce: 6
 --- !u!114 &253779788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1705,6 +1705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyDied: {fileID: 138474481}
   anim: {fileID: 794681040}
+  healthBagPrefab: {fileID: 8185670917249313016, guid: c85474bd259ce674a93e1e60926c3a40, type: 3}
   HPBarEnemy: {fileID: 431326085}
 --- !u!1001 &633394898
 PrefabInstance:
@@ -2380,6 +2381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyDied: {fileID: 138474481}
   anim: {fileID: 794681040}
+  healthBagPrefab: {fileID: 8185670917249313016, guid: c85474bd259ce674a93e1e60926c3a40, type: 3}
   HPBarEnemy: {fileID: 189242454}
 --- !u!95 &794681040
 Animator:
@@ -3362,7 +3364,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 75df3bc2fc3888c4a8c1e577fb88733a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3781,6 +3783,7 @@ GameObject:
   - component: {fileID: 1325732490}
   - component: {fileID: 1325732491}
   - component: {fileID: 1325732492}
+  - component: {fileID: 1325732493}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3924,6 +3927,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1325732493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325732488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d8f30f91430194aadb1f011d0b77e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: 2
+  OnTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 0b3d6475857ac5447ac3a2ec457d1eed, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1359780379
 GameObject:
   m_ObjectHideFlags: 0
@@ -4343,6 +4374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyDied: {fileID: 138474481}
   anim: {fileID: 794681040}
+  healthBagPrefab: {fileID: 8185670917249313016, guid: c85474bd259ce674a93e1e60926c3a40, type: 3}
   HPBarEnemy: {fileID: 2122412048}
 --- !u!1 &1424570616
 GameObject:
@@ -4747,6 +4779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyDied: {fileID: 138474481}
   anim: {fileID: 794681040}
+  healthBagPrefab: {fileID: 8185670917249313016, guid: c85474bd259ce674a93e1e60926c3a40, type: 3}
   HPBarEnemy: {fileID: 1841204413}
 --- !u!1 &1580142255
 GameObject:

@@ -9,6 +9,7 @@ public class EnemyHealths : MonoBehaviour
     private float currentHPEnemy = 100;
     public Text enemyDied;
     public Animator anim;
+    public GameObject healthBagPrefab;
 
     [SerializeField] private Image HPBarEnemy;
 
@@ -35,6 +36,7 @@ public class EnemyHealths : MonoBehaviour
         yield return new WaitForSeconds(0.35f);
         GetComponent<SpriteRenderer>().color = Color.white;
     }
+
 
     public void takeDamage(float damage)
     {
@@ -63,6 +65,17 @@ public class EnemyHealths : MonoBehaviour
 
             // Hancurkan objek setelah animasi selesai (gantilah "AnimationDuration" dengan durasi animasi yang benar)
             StartCoroutine(DestroyAfterAnimation());
+            // healthbag next
+            // Hitung jumlah kesehatan yang akan dijatuhkan (10-15% dari maxHealth)
+            int healthToDrop = Mathf.RoundToInt(Random.Range(0.1f, 0.15f) * maxHPEnemy);
+
+            // Instantiate objek HealthBag di posisi musuh dengan jumlah kesehatan yang dihitung
+            GameObject healthBag = Instantiate(healthBagPrefab, transform.position, Quaternion.identity);
+            /*healthBag.GetComponent<HealthBagScript>().SetHealthAmount(healthToDrop);*/
+            // Instantiate objek HealthBag di posisi musuh
+            Instantiate(healthBagPrefab, transform.position, Quaternion.identity);
+            // Hancurkan musuh
+            /*Destroy(gameObject);*/
         }
     }
 
