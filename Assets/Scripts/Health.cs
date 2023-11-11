@@ -69,7 +69,7 @@ public class Health : MonoBehaviour
     {
         Dead.SetActive(true);
         Time.timeScale = 0f;
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(3.0f);
         // Di sini Anda dapat menambahkan logika lain, seperti mengakhiri permainan atau mengatur ulang level
         Time.timeScale = 1f;
     }
