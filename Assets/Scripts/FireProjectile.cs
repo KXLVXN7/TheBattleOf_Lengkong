@@ -83,11 +83,9 @@ public class FireProjectile : MonoBehaviour
 
     void StartReload()
     {
-        if (!isReloading && bulletsFired > 0) // Tambahkan kondisi bulletsFired > 0
+        if (!isReloading && bulletsFired > 0 && bulletsFired < maxBulletsPerMinute)
         {
             isReloading = true;
-            bulletsFired = 0;
-            lastFireTime = Time.time;
             StartCoroutine(ReloadCoroutine());
             anim.SetBool("reload", true);
         }
