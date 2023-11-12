@@ -40,7 +40,7 @@ public class FireProjectile : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R) &&!isReloading  &&bulletsFired > 0)
+        if (Input.GetKeyDown(KeyCode.R) && !isReloading && bulletsFired > 0)
         {
             StartReload();
             //anim.SetBool("reload", true);
@@ -54,7 +54,6 @@ public class FireProjectile : MonoBehaviour
 
     bool CanFire()
     {
-        if (!isReloading) return false; 
         if (bulletsFired >= maxBulletsPerMinute) return false;
         if (Time.time - lastFireTime < 1.0f / fireRate) return false;
         return true;
@@ -83,9 +82,11 @@ public class FireProjectile : MonoBehaviour
 
     void StartReload()
     {
-        if (!isReloading && bulletsFired > 0)
+        if (!isReloading)
         {
             isReloading = true;
+            bulletsFired = 0;
+            lastFireTime = Time.time;
             StartCoroutine(ReloadCoroutine());
             anim.SetBool("reload", true);
         }
