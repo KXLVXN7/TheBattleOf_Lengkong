@@ -14,7 +14,7 @@ public class FireProjectile : MonoBehaviour
     public Text bulletText;
     public Text bulletReload;
     private bool isReloading = false;
-    private float reloadTime = 5f;
+    private float reloadTime = 1f;
     public Animator anim;
     [SerializeField] private AudioSource gunshotSFX;
     [SerializeField] private AudioSource reloadSFX;
@@ -43,12 +43,12 @@ public class FireProjectile : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) &&!isReloading  &&bulletsFired > 0)
         {
             StartReload();
-            anim.SetBool("reload", true);
+            //anim.SetBool("reload", true);
             reloadSFX.Play();
         }
         else
         {
-            anim.SetBool("reload", false);
+            //anim.SetBool("reload", false);
         }
     }
 
@@ -88,6 +88,8 @@ public class FireProjectile : MonoBehaviour
             bulletsFired = 0;
             lastFireTime = Time.time;
             StartCoroutine(ReloadCoroutine());
+
+            anim.SetBool("reload", true);
         }
     }
 
@@ -104,6 +106,8 @@ public class FireProjectile : MonoBehaviour
 
         isReloading = false;
         UpdateBulletCounter();
+
+        anim.SetBool("reload", false);
     }
 
     void UpdateReloadText(float remainingTime)
@@ -115,11 +119,11 @@ public class FireProjectile : MonoBehaviour
             // Check if the remaining time is zero, then display "Reload Cooldown: 0"
             if (displayedTime == 0)
             {
-                bulletReload.text = "Reload Cooldown: 0";
+                bulletReload.text = "Press R to Reload";
             }
             else
             {
-                bulletReload.text = "Reload Cooldown: " + displayedTime.ToString();
+                bulletReload.text = "Reloading" + displayedTime.ToString();
             }
             //bulletReload.text = "Reload Cooldown: " + Mathf.CeilToInt(remainingTime).ToString();
         }

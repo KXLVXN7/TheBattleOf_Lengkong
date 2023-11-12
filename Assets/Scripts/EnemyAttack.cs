@@ -16,6 +16,7 @@ public class EnemyAttack : MonoBehaviour
     private bool isReloading = false; // Apakah sedang reload
     private float reloadStartTime = 0.0f; // Waktu awal reload
     public float reloadCooldown = 3.0f; // Waktu cooldown reload (3 detik)
+    
 
     void Update()
     {
@@ -38,6 +39,7 @@ public class EnemyAttack : MonoBehaviour
             // Mulai cooldown reload setelah menembak
             isReloading = true;
             reloadStartTime = Time.time;
+            
         }
 
         // Cek apakah cooldown reload sudah selesai

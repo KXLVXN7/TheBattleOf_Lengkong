@@ -22,6 +22,7 @@ public class EnemyPatrol : MonoBehaviour
 
     private bool playerTerdeteksi = false; // Menyimpan apakah pemain terdeteksi
     private Transform playerTransform; // Menyimpan transform pemain
+    public Animator enemyAnimator;
 
     void Start()
     {
@@ -58,6 +59,12 @@ public class EnemyPatrol : MonoBehaviour
 
                     // Musuh selesai menunggu peluru
                     sedangMenungguPeluru = true;
+
+                    // Set the "enemyshoot" parameter to trigger the attack animation
+                    if (enemyAnimator != null)
+                    {
+                        enemyAnimator.SetBool("enemyshoot", true);
+                    }
                 }
                 else
                 {
@@ -89,6 +96,12 @@ public class EnemyPatrol : MonoBehaviour
             // Jika sedang menunggu peluru dan peluru sudah habis, lanjutkan perjalanan
             sedangMenungguPeluru = false;
             SwitchTarget();
+
+            // Reset the "enemyshoot" parameter when not shooting
+            if (enemyAnimator != null)
+            {
+                enemyAnimator.SetBool("enemyshoot", false);
+            }
         }
     }
 
@@ -118,6 +131,12 @@ public class EnemyPatrol : MonoBehaviour
         {
             Vector2 shootingDirection = (target.position - bulletSpawnPoint.position).normalized;
             bulletController.direction = shootingDirection;
+        }
+
+        // Set the "enemyshoot" parameter to trigger the attack animation
+        if (enemyAnimator != null)
+        {
+            enemyAnimator.SetBool("enemyshoot", true);
         }
     }
 }
