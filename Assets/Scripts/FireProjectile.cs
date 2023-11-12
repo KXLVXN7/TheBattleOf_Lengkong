@@ -54,7 +54,7 @@ public class FireProjectile : MonoBehaviour
 
     bool CanFire()
     {
-        if (isReloading) return false;
+        if (!isReloading) return false; 
         if (bulletsFired >= maxBulletsPerMinute) return false;
         if (Time.time - lastFireTime < 1.0f / fireRate) return false;
         return true;
@@ -83,13 +83,12 @@ public class FireProjectile : MonoBehaviour
 
     void StartReload()
     {
-        if (!isReloading)
+        if (!isReloading && bulletsFired > 0) // Tambahkan kondisi bulletsFired > 0
         {
             isReloading = true;
             bulletsFired = 0;
             lastFireTime = Time.time;
             StartCoroutine(ReloadCoroutine());
-
             anim.SetBool("reload", true);
         }
     }
