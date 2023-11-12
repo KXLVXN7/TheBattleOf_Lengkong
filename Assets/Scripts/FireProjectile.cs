@@ -83,7 +83,7 @@ public class FireProjectile : MonoBehaviour
 
     void StartReload()
     {
-        if (!isReloading && bulletsFired > 0 && bulletsFired < maxBulletsPerMinute)
+        if (!isReloading && bulletsFired > 0)
         {
             isReloading = true;
             StartCoroutine(ReloadCoroutine());
