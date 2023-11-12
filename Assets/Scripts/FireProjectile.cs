@@ -54,6 +54,7 @@ public class FireProjectile : MonoBehaviour
 
     bool CanFire()
     {
+        if (isReloading) return false;
         if (bulletsFired >= maxBulletsPerMinute) return false;
         if (Time.time - lastFireTime < 1.0f / fireRate) return false;
         return true;
