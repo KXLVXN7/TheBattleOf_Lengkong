@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class FireProjectile : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    public GameObject grenadePrefab;
     public Transform spawnPoint;
     public float fireRate = 1.0f;
+    public float throwForce = 20f; // Add this line for the throw force
     public int maxBulletsPerMinute = 8;
     private int bulletsFired = 0;
     private float lastFireTime = 0.0f;
@@ -49,6 +51,11 @@ public class FireProjectile : MonoBehaviour
         else
         {
             //anim.SetBool("reload", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            ThrowGrenade();
         }
     }
 
@@ -125,6 +132,21 @@ public class FireProjectile : MonoBehaviour
                 bulletReload.text = "Reloading" + displayedTime.ToString();
             }
             //bulletReload.text = "Reload Cooldown: " + Mathf.CeilToInt(remainingTime).ToString();
+        }
+    }
+
+    void ThrowGrenade()
+    {
+        if (grenadePrefab != null)
+        {
+            GameObject newGrenade = Instantiate(grenadePrefab, spawnPoint.position, Quaternion.identity);
+            Rigidbody grenadeRb = newGrenade.GetComponent<Rigidbody>();
+            Grenade grenadeScript = newGrenade.GetComponent<Grenade>();
+            if (grenadeRb != null)
+            {
+                grenadeScript.direction = spawnPoint.transform.right;
+                grenadeRb.AddForce(spawnPoint.forward * throwForce, ForceMode.VelocityChange);
+            }
         }
     }
 }
