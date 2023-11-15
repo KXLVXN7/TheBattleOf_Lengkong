@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   direction: {x: 0, y: 0, z: 1}
-  maxRange: 3
+  maxRange: 150
   playerDamage: 8
   enemyDamage: 10
   throwForce: 10

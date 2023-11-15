@@ -9,7 +9,7 @@ public class FireProjectile : MonoBehaviour
     public GameObject grenadePrefab;
     public Transform spawnPoint;
     public float fireRate = 1.0f;
-    public float throwForce = 20f; // Add this line for the throw force
+    public float throwForce = 20f;
     public int maxBulletsPerMinute = 8;
     private int bulletsFired = 0;
     private float lastFireTime = 0.0f;
@@ -45,7 +45,6 @@ public class FireProjectile : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && !isReloading && bulletsFired > 0)
         {
             StartReload();
-            //anim.SetBool("reload", true);
             reloadSFX.Play();
         }
         else
@@ -122,7 +121,6 @@ public class FireProjectile : MonoBehaviour
         {
             int displayedTime = Mathf.Max(Mathf.FloorToInt(remainingTime), 0);
 
-            // Check if the remaining time is zero, then display "Reload Cooldown: 0"
             if (displayedTime == 0)
             {
                 bulletReload.text = "Press R to Reload";
@@ -131,7 +129,6 @@ public class FireProjectile : MonoBehaviour
             {
                 bulletReload.text = "Reloading" + displayedTime.ToString();
             }
-            //bulletReload.text = "Reload Cooldown: " + Mathf.CeilToInt(remainingTime).ToString();
         }
     }
 
@@ -140,12 +137,13 @@ public class FireProjectile : MonoBehaviour
         if (grenadePrefab != null)
         {
             GameObject newGrenade = Instantiate(grenadePrefab, spawnPoint.position, Quaternion.identity);
-            Rigidbody grenadeRb = newGrenade.GetComponent<Rigidbody>();
+            Rigidbody2D grenadeRb = newGrenade.GetComponent<Rigidbody2D>();
             Grenade grenadeScript = newGrenade.GetComponent<Grenade>();
-            if (grenadeRb != null)
+
+            if (grenadeRb != null && grenadeScript != null)
             {
-                grenadeScript.direction = spawnPoint.transform.right;
-                grenadeRb.AddForce(spawnPoint.forward * throwForce, ForceMode.VelocityChange);
+                grenadeScript.SetDirection(spawnPoint.right);
+                grenadeRb.AddForce(spawnPoint.right * throwForce, ForceMode2D.Impulse);
             }
         }
     }

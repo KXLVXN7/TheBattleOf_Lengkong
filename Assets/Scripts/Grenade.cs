@@ -17,8 +17,9 @@ public class Grenade : MonoBehaviour
 
     void Start()
     {
+
         initialPosition = transform.position;
-        SetDirection(Vector3.right);
+/*        SetDirection(Vector3.right);*/
         StartCoroutine(ExplodeAfterDelay());
     }
 
@@ -67,7 +68,7 @@ public class Grenade : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void Update()
+/*    void Update()
     {
         // Menggerakkan proyektil
         transform.position += direction * Time.deltaTime * speed;
@@ -83,7 +84,7 @@ public class Grenade : MonoBehaviour
             // Menggerakkan proyektil
             transform.position += direction * Time.deltaTime * speed;
         }
-    }
+    }*/
 
     public void SetDirection(Vector3 newDirection)
     {
