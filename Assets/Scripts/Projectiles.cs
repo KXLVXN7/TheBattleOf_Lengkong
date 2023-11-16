@@ -9,8 +9,8 @@ public class Projectiles : MonoBehaviour
     public float maxRange = 3f; // Jarak maksimum proyektil
 
     private Vector3 initialPosition; // Menyimpan posisi awal proyektil
-    public float playerDamage = 8f; // Definisi variabel damage untuk pemain
-    public float enemyDamage = 10f; // Definisi variabel damage untuk musuh
+    public float playerDamage = 6f; // Definisi variabel damage untuk pemain
+    public float enemyDamage = 12f; // Definisi variabel damage untuk musuh
 
     void Start()
     {
@@ -48,6 +48,7 @@ public class Projectiles : MonoBehaviour
             {
                 // Menyerang musuh dengan damage yang sesuai
                 enemyHealthComponent.takeDamage(enemyDamage);
+                Debug.Log("Darah Enemy berkurang" + enemyDamage);
 
                 // Menghancurkan proyektil setelah menabrak musuh
                 Destroy(gameObject);
@@ -64,6 +65,7 @@ public class Projectiles : MonoBehaviour
             {
                 // Menyerang pemain dengan damage yang sesuai
                 playerHealthComponent.takeDamage(playerDamage);
+                Debug.Log("Darah Player berkurang" + playerDamage);
 
                 // Menghancurkan proyektil setelah menabrak pemain
                 Destroy(gameObject);

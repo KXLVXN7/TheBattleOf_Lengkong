@@ -1130,7 +1130,7 @@ MonoBehaviour:
   grenadePrefab: {fileID: 7094779238442868487, guid: 21e7d302656da1c428eac7bc0075c476, type: 3}
   spawnPoint: {fileID: 1275234277}
   fireRate: 2
-  throwForce: 10
+  throwForce: 2
   maxBulletsPerMinute: 10
   bulletText: {fileID: 72903811}
   bulletReload: {fileID: 2127547321}

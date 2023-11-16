@@ -141,7 +141,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 1}
   maxRange: 150
   playerDamage: 8
-  enemyDamage: 10
+  enemyDamage: 25
   throwForce: 10
   fuseTime: 3
 --- !u!95 &7024937411529036218
