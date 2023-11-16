@@ -142,7 +142,7 @@ MonoBehaviour:
   maxRange: 6
   playerDamage: 25
   enemyDamage: 15
-  throwForce: 10
+  throwForce: 8
   fuseTime: 3
 --- !u!95 &7024937411529036218
 Animator:
