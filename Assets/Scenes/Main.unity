@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 356423131647701949, guid: 08611970103a5064ea4fe9d4c351b3f5, type: 3}
-  grenadePrefab: {fileID: 356423131647701949, guid: 83bc62c499fcc58469e00c623fd43e56, type: 3}
+  grenadePrefab: {fileID: 7094779238442868487, guid: 21e7d302656da1c428eac7bc0075c476, type: 3}
   spawnPoint: {fileID: 1275234277}
   fireRate: 2
   throwForce: 10
