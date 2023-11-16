@@ -14,6 +14,7 @@ public class Grenade : MonoBehaviour
 
     public float throwForce = 10f;
     public float fuseTime = 3f;
+    private Animator animator;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class Grenade : MonoBehaviour
         initialPosition = transform.position;
 /*        SetDirection(Vector3.right);*/
         StartCoroutine(ExplodeAfterDelay());
+        animator = GetComponent<Animator>();
     }
 
     IEnumerator ExplodeAfterDelay()
@@ -31,6 +33,8 @@ public class Grenade : MonoBehaviour
 
     void Explode()
     {
+        
+
         // Find all colliders in the explosion radius
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, maxRange);
 
@@ -50,6 +54,7 @@ public class Grenade : MonoBehaviour
                 if (enemyHealth != null)
                 {
                     enemyHealth.takeDamage(enemyDamage); // Adjust damage as needed
+                    animator.SetBool("explode", true);
                 }
             }
             else if (collider.CompareTag("Player"))
@@ -106,8 +111,12 @@ public class Grenade : MonoBehaviour
                 // Menyerang musuh dengan damage yang sesuai
                 enemyHealthComponent.takeDamage(enemyDamage);
 
+                // Delay the explosion animation
+                StartCoroutine(ExplodeWithDelay());
+
+
                 // Menghancurkan proyektil setelah menabrak musuh
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
         // Mengecek apakah objek yang ditabrak adalah pemain (dengan tag "Player")
@@ -122,8 +131,12 @@ public class Grenade : MonoBehaviour
                 // Menyerang pemain dengan damage yang sesuai
                 playerHealthComponent.takeDamage(playerDamage);
 
+                // Delay the explosion animation
+                StartCoroutine(ExplodeWithDelay());
+
+
                 // Menghancurkan proyektil setelah menabrak pemain
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
         // Menghancurkan proyektil jika menabrak objek selain musuh, pemain, dan proyektil musuh
@@ -131,5 +144,17 @@ public class Grenade : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator ExplodeWithDelay()
+    {
+        yield return new WaitForSeconds(0.5f); // Adjust the delay duration as needed
+
+        if (animator != null)
+        {
+            animator.SetTrigger("explode");
+        }
+
+        Destroy(gameObject);
     }
 }
