@@ -12,6 +12,7 @@ public class Grenade : MonoBehaviour
     public float playerDamage = 8f; // Definisi variabel damage untuk pemain
     public float enemyDamage = 10f; // Definisi variabel damage untuk musuh
 
+    public float maxGranade = 3;
     public float throwForce = 10f;
     public float fuseTime = 3f;
     private Animator animator;

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,13 +12,15 @@ public class FireProjectile : MonoBehaviour
     public int maxBulletsPerMinute = 8;
     private int bulletsFired = 0;
     private float lastFireTime = 0.0f;
-    public Text bulletText;
-    public Text bulletReload;
     private bool isReloading = false;
     private float reloadTime = 1f;
     public Animator anim;
     [SerializeField] private AudioSource gunshotSFX;
     [SerializeField] private AudioSource reloadSFX;
+
+    private int grenadesThrown = 0;
+    public int maxGrenades = 3;
+    public Text grenadeText;
 
     void Update()
     {
@@ -46,10 +47,6 @@ public class FireProjectile : MonoBehaviour
         {
             StartReload();
             reloadSFX.Play();
-        }
-        else
-        {
-            //anim.SetBool("reload", false);
         }
 
         if (Input.GetKeyDown(KeyCode.G))
@@ -80,10 +77,7 @@ public class FireProjectile : MonoBehaviour
 
     void UpdateBulletCounter()
     {
-        if (bulletText != null)
-        {
-            bulletText.text = ": " + (maxBulletsPerMinute - bulletsFired).ToString();
-        }
+        // Update UI or perform other actions based on bullets
     }
 
     void StartReload()
@@ -104,7 +98,6 @@ public class FireProjectile : MonoBehaviour
 
         while (remainingTime > 0f)
         {
-            UpdateReloadText(remainingTime);
             yield return new WaitForSeconds(0.1f);
             remainingTime -= 0.1f;
         }
@@ -115,36 +108,36 @@ public class FireProjectile : MonoBehaviour
         anim.SetBool("reload", false);
     }
 
-    void UpdateReloadText(float remainingTime)
+    void ThrowGrenade()
     {
-        if (bulletReload != null)
+        if (grenadePrefab != null && grenadesThrown < maxGrenades)
         {
-            int displayedTime = Mathf.Max(Mathf.FloorToInt(remainingTime), 0);
-
-            if (displayedTime == 0)
-            {
-                bulletReload.text = "Press R to Reload";
-            }
-            else
-            {
-                bulletReload.text = "Reloading" + displayedTime.ToString();
-            }
+            StartCoroutine(ThrowGrenadeWithDelay());
         }
     }
 
-    void ThrowGrenade()
+    IEnumerator ThrowGrenadeWithDelay()
     {
-        if (grenadePrefab != null)
-        {
-            GameObject newGrenade = Instantiate(grenadePrefab, spawnPoint.position, Quaternion.identity);
-            Rigidbody2D grenadeRb = newGrenade.GetComponent<Rigidbody2D>();
-            Grenade grenadeScript = newGrenade.GetComponent<Grenade>();
+        yield return new WaitForSeconds(0.1f); // Delay before throwing the grenade, adjust as needed
 
-            if (grenadeRb != null && grenadeScript != null)
-            {
-                grenadeScript.SetDirection(spawnPoint.right);
-                grenadeRb.AddForce(spawnPoint.right * throwForce, ForceMode2D.Impulse);
-            }
+        GameObject newGrenade = Instantiate(grenadePrefab, spawnPoint.position, Quaternion.identity);
+        Rigidbody2D grenadeRb = newGrenade.GetComponent<Rigidbody2D>();
+        Grenade grenadeScript = newGrenade.GetComponent<Grenade>();
+
+        if (grenadeRb != null && grenadeScript != null)
+        {
+            grenadeScript.SetDirection(spawnPoint.right);
+            grenadeRb.AddForce(spawnPoint.right * throwForce, ForceMode2D.Impulse);
+            grenadesThrown++;
+            UpdateGrenadeCounter();
+        }
+    }
+
+    void UpdateGrenadeCounter()
+    {
+        if (grenadeText != null)
+        {
+            grenadeText.text = "Grenades: " + (maxGrenades - grenadesThrown).ToString();
         }
     }
 }

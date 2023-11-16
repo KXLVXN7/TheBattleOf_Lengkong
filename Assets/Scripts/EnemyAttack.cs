@@ -16,7 +16,9 @@ public class EnemyAttack : MonoBehaviour
     private bool isReloading = false; // Apakah sedang reload
     private float reloadStartTime = 0.0f; // Waktu awal reload
     public float reloadCooldown = 3.0f; // Waktu cooldown reload (3 detik)
-    
+
+    /*[SerializeField] private AudioSource gunshotSFX;*/
+
 
     void Update()
     {
@@ -35,7 +37,7 @@ public class EnemyAttack : MonoBehaviour
 
             // Tembak proyektil dengan arah yang sudah dihitung
             ShootProjectile(enemySpawnPoint, enemyProjectilePrefab, ref enemyBulletsFired, ref enemyLastFireTime, directionToPlayer);
-
+            /*gunshotSFX.Play();*/
             // Mulai cooldown reload setelah menembak
             isReloading = true;
             reloadStartTime = Time.time;
