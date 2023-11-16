@@ -102,6 +102,10 @@ public class Grenade : MonoBehaviour
         // Mengecek apakah objek yang ditabrak adalah musuh (dengan tag "Enemy")
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            if (animator != null)
+            {
+                animator.SetBool("explode",true);
+            }
             // Mengambil komponen EnemyHealths dari objek yang ditabrak
             EnemyHealths enemyHealthComponent = collision.gameObject.GetComponent<EnemyHealths>();
 
