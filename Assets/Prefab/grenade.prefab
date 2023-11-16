@@ -139,9 +139,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   direction: {x: 0, y: 0, z: 1}
-  maxRange: 150
-  playerDamage: 8
-  enemyDamage: 25
+  maxRange: 6
+  playerDamage: 25
+  enemyDamage: 15
   throwForce: 10
   fuseTime: 3
 --- !u!95 &7024937411529036218
