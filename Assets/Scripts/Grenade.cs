@@ -16,7 +16,8 @@ public class Grenade : MonoBehaviour
     public float throwForce = 10f;
     public float fuseTime = 3f;
     private Animator animator;
-
+    [SerializeField] private AudioSource explodeSFX;
+    [SerializeField] private AudioSource pinSFX;
     void Start()
     {
 
@@ -24,6 +25,7 @@ public class Grenade : MonoBehaviour
 /*        SetDirection(Vector3.right);*/
         StartCoroutine(ExplodeAfterDelay());
         animator = GetComponent<Animator>();
+        pinSFX.Play();
     }
 
     IEnumerator ExplodeAfterDelay()
@@ -34,8 +36,6 @@ public class Grenade : MonoBehaviour
 
     void Explode()
     {
-        
-
         // Find all colliders in the explosion radius
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, maxRange);
 
@@ -56,6 +56,7 @@ public class Grenade : MonoBehaviour
                 {
                     enemyHealth.takeDamage(enemyDamage); // Adjust damage as needed
                     animator.SetBool("explode", true);
+                    
                 }
             }
             else if (collider.CompareTag("Player"))
@@ -107,6 +108,7 @@ public class Grenade : MonoBehaviour
             {
                 animator.SetBool("explode",true);
             }
+            explodeSFX.Play();
             // Mengambil komponen EnemyHealths dari objek yang ditabrak
             EnemyHealths enemyHealthComponent = collision.gameObject.GetComponent<EnemyHealths>();
 
@@ -159,7 +161,7 @@ public class Grenade : MonoBehaviour
         {
             animator.SetTrigger("explode");
         }
-
+        
         Destroy(gameObject);
     }
 }
