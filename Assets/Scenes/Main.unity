@@ -641,7 +641,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ': 8'
+  m_Text: ': 10'
 --- !u!222 &72903812
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1335,6 +1335,7 @@ MonoBehaviour:
   reloadSFX: {fileID: 253779792}
   maxGrenades: 3
   grenadeText: {fileID: 0}
+  bulletText: {fileID: 72903811}
 --- !u!114 &253779789
 MonoBehaviour:
   m_ObjectHideFlags: 0

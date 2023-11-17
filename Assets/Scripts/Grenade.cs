@@ -10,7 +10,7 @@ public class Grenade : MonoBehaviour
 
     private Vector3 initialPosition; // Menyimpan posisi awal proyektil
     public float playerDamage = 8f; // Definisi variabel damage untuk pemain
-    public float enemyDamage = 10f; // Definisi variabel damage untuk musuh
+    public float enemyDamage = 8f; // Definisi variabel damage untuk musuh
 
     public float maxGranade = 3;
     public float throwForce = 10f;

@@ -21,6 +21,7 @@ public class FireProjectile : MonoBehaviour
     private int grenadesThrown = 0;
     public int maxGrenades = 3;
     public Text grenadeText;
+    public Text bulletText;
 
     void Update()
     {
@@ -77,7 +78,20 @@ public class FireProjectile : MonoBehaviour
 
     void UpdateBulletCounter()
     {
-        // Update UI or perform other actions based on bullets
+        // Pastikan bulletText telah diatur di inspektor
+        if (bulletText != null)
+        {
+            // Hitung waktu per reloading satu peluru dalam detik
+            float timePerBulletReload = 60.0f / maxBulletsPerMinute;
+            // Hitung waktu yang tersisa hingga peluru terisi kembali
+            float timeToReload = timePerBulletReload * (maxBulletsPerMinute - bulletsFired);
+            // Ubah waktu reloading ke format yang sesuai (misalnya, menit:detik)
+            int minutes = Mathf.FloorToInt(timeToReload / 60);
+            int seconds = Mathf.FloorToInt(timeToReload % 60);
+            bulletText.text = ": " + (maxBulletsPerMinute - bulletsFired).ToString();
+            
+        }
+
     }
 
     void StartReload()

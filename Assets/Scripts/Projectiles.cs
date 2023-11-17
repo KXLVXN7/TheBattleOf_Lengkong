@@ -9,8 +9,8 @@ public class Projectiles : MonoBehaviour
     public float maxRange = 3f; // Jarak maksimum proyektil
 
     private Vector3 initialPosition; // Menyimpan posisi awal proyektil
-    public float playerDamage = 6f; // Definisi variabel damage untuk pemain
-    public float enemyDamage = 12f; // Definisi variabel damage untuk musuh
+    public float playerDamage = 12f; // Definisi variabel damage untuk pemain
+    public float enemyDamage = 8f; // Definisi variabel damage untuk musuh
 
     void Start()
     {

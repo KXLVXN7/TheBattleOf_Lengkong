@@ -102,8 +102,8 @@ MonoBehaviour:
   speed: 20
   direction: {x: 0, y: 0, z: 1}
   maxRange: 15
-  playerDamage: 12
-  enemyDamage: 8
+  playerDamage: 8
+  enemyDamage: 12
 --- !u!50 &2237475825293253225
 Rigidbody2D:
   serializedVersion: 4
