@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 352248568816340261}
   - component: {fileID: 3061408799401397613}
-  - component: {fileID: 6876714685173291135}
   - component: {fileID: 1674125629187518412}
   - component: {fileID: 7287822083352073193}
+  - component: {fileID: 4326028552577274719}
   m_Layer: 0
   m_Name: Circle 3
   m_TagString: ProjectileEnemy
@@ -87,23 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6876714685173291135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829845725047437861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f54c14b3c03788243ba00109ecee22e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  direction: {x: 0, y: 0, z: 1}
-  maxRange: 15
-  playerDamage: 8
-  enemyDamage: 12
 --- !u!50 &1674125629187518412
 Rigidbody2D:
   serializedVersion: 4
@@ -141,3 +124,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &4326028552577274719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829845725047437861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5fecd840167b7c4aaf73ce923e037c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  direction: {x: 0, y: 0, z: 0}
+  maxRange: 15
+  playerDamage: 2

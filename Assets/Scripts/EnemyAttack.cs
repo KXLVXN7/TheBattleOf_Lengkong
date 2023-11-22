@@ -62,7 +62,7 @@ public class EnemyAttack : MonoBehaviour
     void ShootProjectile(Transform spawnPoint, GameObject projectilePrefab, ref int bulletsFired, ref float lastFireTime, Vector3 shootingDirection)
     {
         GameObject newProjectile = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
-        Projectiles projectileScript = newProjectile.GetComponent<Projectiles>();
+        EnemyProjectiles projectileScript = newProjectile.GetComponent<EnemyProjectiles>();
         if (projectileScript != null)
         {
             // Atur arah proyektil sesuai dengan shootingDirection

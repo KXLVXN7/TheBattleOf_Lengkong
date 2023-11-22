@@ -2540,6 +2540,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 829814247}
     - target: {fileID: 5183160010466428605, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
+      propertyPath: enemyAnimator
+      value: 
+      objectReference: {fileID: 794681040}
+    - target: {fileID: 5183160010466428605, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 7787019551143565618, guid: cdd5b6a7fd4b62f4c8d3b39720acb92b, type: 3}
@@ -4534,6 +4538,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 829814247}
     - target: {fileID: 5183160010466428605, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
+      propertyPath: enemyAnimator
+      value: 
+      objectReference: {fileID: 794681040}
+    - target: {fileID: 5183160010466428605, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 6477677995258064118, guid: 098bbb9b2dacdaf449027d396c8df160, type: 3}
@@ -4659,6 +4667,10 @@ PrefabInstance:
       propertyPath: detection2
       value: 
       objectReference: {fileID: 829814247}
+    - target: {fileID: 5183160010466428605, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
+      propertyPath: enemyAnimator
+      value: 
+      objectReference: {fileID: 794681040}
     - target: {fileID: 5183160010466428605, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: projectilePrefab
       value: 
@@ -8442,6 +8454,10 @@ PrefabInstance:
       propertyPath: detection2
       value: 
       objectReference: {fileID: 1513890657}
+    - target: {fileID: 5183160010466428605, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
+      propertyPath: enemyAnimator
+      value: 
+      objectReference: {fileID: 794681040}
     m_RemovedComponents:
     - {fileID: 5183160010466428578, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}

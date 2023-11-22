@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectiles : MonoBehaviour
+public class EnemyProjectiles : MonoBehaviour
 {
     public float speed = 10f; // Kecepatan proyektil
     public Vector3 direction;
     public float maxRange = 3f; // Jarak maksimum proyektil
 
     private Vector3 initialPosition; // Menyimpan posisi awal proyektil
-    public float enemyDamage = 8f; // Variabel damage untuk musuh
+    public float playerDamage = 12f; // Variabel damage untuk pemain
 
     void Start()
     {
@@ -36,24 +36,24 @@ public class Projectiles : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Periksa apakah objek yang ditabrak adalah musuh (dengan tag "Enemy")
-        if (collision.gameObject.CompareTag("Enemy"))
+        // Periksa apakah objek yang ditabrak adalah pemain (dengan tag "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            // Dapatkan komponen EnemyHealths dari objek yang ditabrak
-            EnemyHealths enemyHealthComponent = collision.gameObject.GetComponent<EnemyHealths>();
+            // Dapatkan komponen Health dari objek pemain
+            Health playerHealthComponent = collision.gameObject.GetComponent<Health>();
 
-            // Periksa apakah objek yang ditabrak memiliki komponen EnemyHealths
-            if (enemyHealthComponent != null)
+            // Periksa apakah objek yang ditabrak memiliki komponen Health
+            if (playerHealthComponent != null)
             {
-                // Serang musuh dengan damage yang sesuai
-                enemyHealthComponent.takeDamage(enemyDamage);
-                Debug.Log("Darah Enemy berkurang" + enemyDamage);
+                // Serang pemain dengan damage yang sesuai
+                playerHealthComponent.takeDamage(playerDamage);
+                Debug.Log("Darah Player berkurang" + playerDamage);
 
-                // Hancurkan proyektil setelah menabrak musuh
+                // Hancurkan proyektil setelah menabrak pemain
                 Destroy(gameObject);
             }
         }
-        // Hancurkan proyektil jika menabrak objek selain musuh
+        // Hancurkan proyektil jika menabrak objek selain pemain
         else
         {
             Destroy(gameObject);
