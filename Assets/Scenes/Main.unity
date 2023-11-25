@@ -6482,7 +6482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1580699488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8701,6 +8701,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428605, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
+      propertyPath: jarakRaycast
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183160010466428605, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: patrolPoint1
       value: 
       objectReference: {fileID: 1513890657}
@@ -8720,6 +8724,14 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 253779784}
+    - target: {fileID: 5183160010466428605, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
+      propertyPath: bulletSpawnPoint
+      value: 
+      objectReference: {fileID: 134003238}
+    - target: {fileID: 5183160010466428605, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 3196582887756879976, guid: 1466449589de68647be0c97e811c76d8, type: 3}
     - target: {fileID: 5183160010466428605, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: patrolPoints.Array.size
       value: 2
