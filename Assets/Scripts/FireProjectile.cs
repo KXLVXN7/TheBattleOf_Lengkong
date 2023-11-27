@@ -15,6 +15,7 @@ public class FireProjectile : MonoBehaviour
     private bool isReloading = false;
     private float reloadTime = 1f;
     public Animator anim;
+    public Animator projektiles;
     [SerializeField] private AudioSource gunshotSFX;
     [SerializeField] private AudioSource reloadSFX;
 
@@ -73,6 +74,7 @@ public class FireProjectile : MonoBehaviour
             lastFireTime = Time.time;
             bulletsFired++;
             UpdateBulletCounter();
+            anim.SetBool("fireProjectiles", true);
         }
     }
 

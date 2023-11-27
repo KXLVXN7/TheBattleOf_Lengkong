@@ -1331,6 +1331,7 @@ MonoBehaviour:
   throwForce: 8
   maxBulletsPerMinute: 10
   anim: {fileID: 253779790}
+  projektiles: {fileID: 9216431042947073619, guid: 08611970103a5064ea4fe9d4c351b3f5, type: 3}
   gunshotSFX: {fileID: 253779791}
   reloadSFX: {fileID: 253779792}
   maxGrenades: 3
