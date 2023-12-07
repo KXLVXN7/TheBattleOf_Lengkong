@@ -2517,6 +2517,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1407749809}
     - target: {fileID: 5183160010466428604, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
+      propertyPath: maxAimError
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183160010466428604, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: reloadCooldown
       value: 1
       objectReference: {fileID: 0}
@@ -4544,6 +4548,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1544464723}
     - target: {fileID: 5183160010466428604, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
+      propertyPath: maxAimError
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183160010466428604, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: reloadCooldown
       value: 1
       objectReference: {fileID: 0}
@@ -4701,6 +4709,10 @@ PrefabInstance:
       propertyPath: gunshotSFX
       value: 
       objectReference: {fileID: 571957800}
+    - target: {fileID: 5183160010466428604, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
+      propertyPath: maxAimError
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428604, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: reloadCooldown
       value: 1
@@ -8677,6 +8689,10 @@ PrefabInstance:
       propertyPath: gunshotSFX
       value: 
       objectReference: {fileID: 794681047}
+    - target: {fileID: 5183160010466428604, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
+      propertyPath: maxAimError
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5183160010466428604, guid: f3ce0d34ea5f69247b389620a3af0625, type: 3}
       propertyPath: reloadCooldown
       value: 1

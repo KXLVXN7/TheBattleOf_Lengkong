@@ -139,4 +139,4 @@ MonoBehaviour:
   speed: 20
   direction: {x: 0, y: 0, z: 1}
   maxRange: 8
-  playerDamage: 3
+  playerDamage: 6
