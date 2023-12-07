@@ -74,7 +74,7 @@ public class FireProjectile : MonoBehaviour
             lastFireTime = Time.time;
             bulletsFired++;
             UpdateBulletCounter();
-            anim.SetBool("fireProjectiles", true);
+            /*anim.SetBool("fireProjectiles", true);*/
         }
     }
 
